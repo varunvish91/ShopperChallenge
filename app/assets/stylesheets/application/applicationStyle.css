@@ -1,25 +1,49 @@
-
-import url(https://fonts.googleapis.com/css?family=Antic+Slab);
-
 body {
-  background-color: #d9d9d9;
-  font-family: 'Antic Slab', serif;
-}
-
-.innerBox {
   background-color: #f2f2f2;
-  width: 93%;
-  margin:0 auto;
+}
+.innerBox {
+  position: fixed;
+  height: 90%;
+  background-color: white;
+  width: 95%;
+  margin-left: 2%;
+  margin-right: 3%;
   margin-top: 2%;
   margin-bottom: 3%;
 }
 
 .signup {
-	margin-top: 1%;
-	margin:0 auto;
-	width: 50%;
-	padding: 10px;
-
-
+  color: #00b300;
+  font-size: 1.5em;
 }
 
+.centered {
+  display: block;
+  text-align: center;
+}
+input {
+  height: 2em;
+  width: 10em;
+  font-size: .7em;
+  margin: 1%;
+  border-color: #00e600;
+}
+
+.apply {
+  background-color:  #00b300;
+  border-radius: 2%;
+  border-width: 0;
+  height: 2em;
+  width: 10em;
+  color: white;
+  font-size: 2em;
+}
+
+.confirmation {
+  font-size: 2em;
+  color: #00b300;
+}
+
+/*.table {
+  align: center;
+}*/

@@ -1,11 +1,11 @@
 class ApplicantsController < ApplicationController
   def new
-    # your code here
-  end
+  	@applicant = Applicant.new
+	end
 
   def create
-    # your code here
-  end
+		@applicant = Applicant.new(params[:applicant])
+	end
 
   def update
     # your code here

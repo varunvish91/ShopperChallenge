@@ -1,40 +1,31 @@
-angular.module('personalSite', [])
+angular.module('CodingChallenge', [])
 
-// show 1 = landing/picture
-//show 2 = alternative??
-// show 3 = blog
-// show 4 = resume
-// show 5 = recent projects
-
-.controller('personalSiteController', function($scope) {
+.controller('CodingChallengeController', function($scope) {
   $scope.show = 1;
-  $scope.firstLoad = true;
-
-  $scope.showHome = function(){
-    if ($scope.firstLoad){
-      $(".home").fadeIn(1000);
-      $scope.firstLoad = false;
-    } else {
-      $(".home").fadeIn(500);
+  $scope.submit = function(firstName, lastName, region, phoneNumber, over21, reason){
+     var userInfo = {
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      region: document.getElementById("region").value,
+      phone: document.getElementById("phone").value,
+      phoneNumber: document.getElementById("phoneNumber").value,
+      over21: document.getElementById("over21").value,
+      reason: document.getElementById("reason").value
     }
-    $scope.show = 1;
-  }
-
-  $scope.showAll = function(){
-
-  }
-
-  $scope.showHome();
-  $scope.showBlog = function(){
-    $scope.show = 3;
-    $(".blog").fadeIn(500);
-  }
-  $scope.showResume = function(){
+    console.log("userInfo: ", userInfo)
     $scope.show = 4;
-    $(".resume").fadeIn(500);
+    $(".apply").fadeOut(300);
+    $(".confirmation").fadeIn(300);
   }
-  $scope.showProjects = function(){
-    $scope.show = 5;
-    $(".projects").fadeIn(500);
+  $scope.begin = function(){
+    $scope.show = 2;
+    $(".start").fadeOut(300);
+    $(".signup").fadeIn(300);
   }
+
+  $scope.backgroundCheck = function(){
+    $scope.show = 3;
+  }
+
 });
+
