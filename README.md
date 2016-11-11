@@ -1,6 +1,10 @@
 Shopper Challenge
 =================
 
+#Varun changes
+- Get Angular up
+bundle exec rake bower:install
+
 Please build this like you would an actual project you're working on. It should be production-ready code that you're proud of.
 
 Instacart Shoppers are the face of the company - literally - and as such, we require them to go through a rigorous process before they can deliver your groceries. This includes a comprehensive application as well as a training process.

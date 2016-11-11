@@ -16,4 +16,6 @@
 //= require bootstrap-sprockets
 //= require d3
 //= require nvd3
+//= require angular
+//= require angular-rails-templates  
 //= require_tree .

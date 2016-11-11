@@ -1,0 +1,25 @@
+
+import url(https://fonts.googleapis.com/css?family=Antic+Slab);
+
+body {
+  background-color: #d9d9d9;
+  font-family: 'Antic Slab', serif;
+}
+
+.innerBox {
+  background-color: #f2f2f2;
+  width: 93%;
+  margin:0 auto;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.signup {
+	margin-top: 1%;
+	margin:0 auto;
+	width: 50%;
+	padding: 10px;
+
+
+}
+

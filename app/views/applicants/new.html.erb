@@ -1,0 +1,37 @@
+<html>	
+	<head>
+		<%= stylesheet_link_tag "applicationStyle", media: "all" %>
+	</head>
+<body>
+  <div ng-app="personalSite">
+  <div ng-controller = "personalSiteController">
+  <div class = innerBox>
+  	<p class = "name animated fadeInDown delay">Apply to be an Instacart Shopper!</p>
+	
+		<div class = "signup" ng-show = "show==1">
+			<form class="applicant_form" id="new_applicant" action="/initial_signup" method="post">
+				<div class="names">
+					<input tabindex="1" placeHolder="First name" type="text" name="applicant[first_name]" id="applicant_first_name" />
+					<input tabindex="1" placeHolder="Last name" type="text" name="applicant[last_name]" id="applicant_last_name" />
+				</div>
+				<div class="email">
+					<input tabindex="1" placeHolder="Email" type="text" name="applicant[email]" id="applicant_email_address" />
+				</div>
+					<input tabindex="1" placeHolder="Phone Number" type="text" name="applicant[phone]" id="applicant_phone_number" />
+					<input tabindex="1" placeHolder="State" type="text" name="applicant[state]" id="applicant_state" />
+				
+					<button name="button" type="submit" class="btn" id="register_application" />Submit</button>
+			</form>
+		</div>
+	<div>
+</body>
+
+
+<!-- Email, Phone, over 21 created at (hidden) updated at (hidden) Reason Phone Type Region (State)
+
+
+
+
+
+
+</html>
