@@ -4,7 +4,12 @@ class ApplicantsController < ApplicationController
 	end
 
   def create
-		@applicant = Applicant.new(params[:applicant])
+		@applicant = Applicant.new(post_params)
+		if @applicant.save
+			redirect_to(:back)
+		else
+			render 'new'	
+		end
 	end
 
   def update
@@ -14,4 +19,8 @@ class ApplicantsController < ApplicationController
   def show
     # your code here
   end
+	
+	def post_params
+		params.require(:applicant).permit(:commit)
+	end
 end

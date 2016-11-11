@@ -30,8 +30,6 @@
 				<br>
 				<%= f.text_field :last_name, :placeholder => "Last Name" %>
        	<br> 
-				<%= f.text_field :email, :placeholder => "Email" %>
-				<br>
 				<%= f.text_field :phone, :placeholder => "Phone Number" %>
 				<br>
 				<%= f.collection_select :phone_type, Applicant::PHONE_TYPES, :to_s, :to_s, :include_blank => false %>
