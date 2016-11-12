@@ -28,7 +28,6 @@ class ApplicantsController < ApplicationController
 	end
 
   def show
-		puts Applicant.count
 	end
 	
 end
