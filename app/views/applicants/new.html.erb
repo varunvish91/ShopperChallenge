@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
   <div ng-app="CodingChallenge">
     <div ng-controller="CodingChallengeController">
 <div class = "innerBox">
@@ -27,11 +26,11 @@
       <form action="background_check/new" method="GET">
         <br>
 
-        <input type = "text" name = "firstName" id = "firstName" placeholder = "First Name">
+        <input type = "text" name = "firstName" id = "firstName" placeholder = "First Name" value=<%=session[:first_name]%>>
         <br>
-        <input type = "text" name = "lastName" id = "lastName" placeholder = "Last Name">
+        <input type = "text" name = "lastName" id = "lastName" placeholder = "Last Name" value=<%=session[:last_name]%>>
         <br>
-        <select name="region" id = "region">
+        <select name="region" id = "region" value=<%=session[:region]%>>
           <option disabled selected value> -- select a region -- </option>
           <option value="SF">SF</option>
           <option value="Chicago">Chicago</option>
@@ -42,7 +41,7 @@
           <option value="Delhi">Delhi</option>
         </select>
       <br>
-        <select name="phone" id = "phone">
+        <select name="phone" id = "phone" value=<%=session[:phone]%>>
           <option disabled selected value> -- select a phone -- </option>
           <option value="iPhone 6/6 Plus">iPhone 6/6 Plus</option>
           <option value="iPhone 6s/6s Plus">iPhone 6s/6s Plus</option>
@@ -56,9 +55,9 @@
           <option value="Other">Other</option>
         </select>
       <br>
-        <input type = "text" name = "phoneNumber" id = "phoneNumber" placeholder = "Phone Number">
+        <input type = "text" name = "phoneNumber" id = "phoneNumber" placeholder = "Phone Number" value=<%=session[:phone_number]%>>
         <br>
-        <input type = "text" name = "email" id = "email" placeholder = "Email" />
+        <input type = "text" name = "email" id = "email" placeholder = "Email" value= <%= session[:email] %> />
 				<br>
 				<button type="submit" value="submit">Review</button>
 				</form>
