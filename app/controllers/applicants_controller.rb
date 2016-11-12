@@ -1,6 +1,7 @@
 class ApplicantsController < ApplicationController
   def new
   	@applicant = Applicant.new
+		puts "new applicant"
 	end
 
   def create
@@ -17,8 +18,8 @@ class ApplicantsController < ApplicationController
   end
 
   def show
-    # your code here
-  end
+		puts "wazzzap"
+	end
 	
 	def post_params
 		params.require(:applicant).permit(:commit)

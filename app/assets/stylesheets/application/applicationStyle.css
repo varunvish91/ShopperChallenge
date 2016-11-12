@@ -44,6 +44,11 @@ input {
   color: #00b300;
 }
 
+.btn {
+	background: url("../../images/next.png")
+
+}
+
 /*.table {
   align: center;
 }*/

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+  <title>VarunChallenge</title>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#background_check_agree').click(function() {
+				if($('#background_check_agree').prop('checked')) {
+					$('#complete_application').show();
+				} else {
+					$('#complete_application').hide();
+				}
+
+
+			});
+
+			$('#complete_application').hide();
+		});
+
+	</script>
+
+</head>
+
+<body>
+
+<div ng-app="CodingChallenge">
+<div ng-controller="CodingChallengeController">
+<div class = "innerBox">
+
+  <div class = "centered">
+    <br>
+		<%= image_tag("logo.png") %>
+	</div>
+	<br>
+  <div class = "signup centered">
+			First Name: <%= params[:firstName] %>
+			<br>
+			Last Name: <%= params[:lastName] %>
+			<br>
+			Region: <%= params[:region] %>
+			<br>
+			Phone Type: <%= params[:phone] %>
+			<br>
+			Phone Number: <%= params[:phoneNumber] %>
+			<br>
+			<input type=checkbox id="background_check_agree" value="no">Do you agree to allow Instacart to perform a background check?</input>
+	   	<br>
+			<button class = "apply" type="submit" value="submit" id="complete_application">Complete Application</button>
+
+	</div>
+
+</div>
+</div>
+</div>
+</body>
+
+</html>
+
