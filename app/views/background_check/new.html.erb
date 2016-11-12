@@ -3,18 +3,45 @@
 <head>
   <title>VarunChallenge</title>
 	<script type="text/javascript">
+	function isChecked() {
+		return $('#background_check_agree').prop('checked');
+
+	}
+	function getParameterByName(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
+	
 		$(document).ready(function() {
-			$('#background_check_agree').click(function() {
-				if($('#background_check_agree').prop('checked')) {
-					$('#complete_application').show();
+			$('#complete_application').click(function() {
+				if (isChecked()) {
+					$.ajax({
+						type:"POST",
+						url:"/applicants/create",
+						data: {
+							'first_name' : getParameterByName('firstName'),
+							'last_name'  : getParameterByName('lastName'),
+							'email'		   : getParameterByName('email'),
+							'phone'      : getParameterByName('phoneNumber'),
+					    'phone_type' : getParameterByName('phoneType'),
+				      'region'     : getParameterByName('region')
+						},
+						dataType: "json",
+					});
+					$('#signup').hide();
+					$('#confirmation_dialog').show();
 				} else {
-					$('#complete_application').hide();
-				}
-
-
-			});
-
-			$('#complete_application').hide();
+					alert("You must agree to a background check!");
+				}	
+			});		
+			$('#confirmation_dialog').hide();
 		});
 
 	</script>
@@ -25,14 +52,14 @@
 
 <div ng-app="CodingChallenge">
 <div ng-controller="CodingChallengeController">
-<div class = "innerBox">
+<div class = "innerBox" id="box">
 
   <div class = "centered">
     <br>
 		<%= image_tag("logo.png") %>
 	</div>
 	<br>
-  <div class = "signup centered">
+  <div id="signup" class = "signup centered">
 			First Name: <%= params[:firstName] %>
 			<br>
 			Last Name: <%= params[:lastName] %>
@@ -43,11 +70,16 @@
 			<br>
 			Phone Number: <%= params[:phoneNumber] %>
 			<br>
+			Email : <%= params[:email] %>
+			<br>
 			<input type=checkbox id="background_check_agree" value="no">Do you agree to allow Instacart to perform a background check?</input>
 	   	<br>
 			<button class = "apply" type="submit" value="submit" id="complete_application">Complete Application</button>
 
 	</div>
+ 	<div id="confirmation_dialog" class = "confirmation centered">
+    Thanks for your application, we'll get back to you shortly!
+  </div>
 
 </div>
 </div>
