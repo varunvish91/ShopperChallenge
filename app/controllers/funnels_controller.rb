@@ -14,13 +14,13 @@ class FunnelsController < ApplicationController
 		@buckets[first_bucket] = get_entries_for_week(start_date.at_beginning_of_week, start_date.at_end_of_week)
 		while first_bucket != last_bucket do
 			# Increment our first_bucket
-			puts  "in here"
 			start_date = start_date.next_week
-			puts start_date
 			# Add the entries to the next bucket
 			first_bucket = get_bucket(start_date)
-			puts first_bucket
-			@buckets[first_bucket] = get_entries_for_week(start_date.at_beginning_of_week, start_date.at_end_of_week)
+			entries = get_entries_for_week(start_date.at_beginning_of_week, start_date.at_end_of_week)
+			if entries.count != 0
+				@buckets[first_bucket] = get_entries_for_week(start_date.at_beginning_of_week, start_date.at_end_of_week)
+			end
 		end
 		hash = @buckets.to_json
 		@funnel = JSON.parse(hash)
