@@ -4,7 +4,6 @@ class FunnelsController < ApplicationController
 		start_date = DateTime.parse(params[:start_date].gsub!(/\s|"|'/, ''))
 		end_date   = DateTime.parse(params[:end_date].gsub!(/\s|"|'/, ''))
 		@buckets = Hash.new
-
 		# Get the first bucket
 		first_bucket = get_bucket(start_date)
 		
